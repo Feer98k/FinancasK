@@ -41,7 +41,7 @@ class ResumoView(
             text = totalReceita.formataMoedaBrasil()
             setTextColor(ContextCompat.getColor(contexto, configuraCorResumo(totalReceita)))
         }
-        with(view.findViewById<TextView>(R.id.resumo_card_receita)) {
+        with(view.findViewById<TextView>(R.id.resumo_card_total)) {
             text = totalLiquido.formataMoedaBrasil()
             setTextColor(ContextCompat.getColor(contexto, configuraCorResumo(totalLiquido)))
         }

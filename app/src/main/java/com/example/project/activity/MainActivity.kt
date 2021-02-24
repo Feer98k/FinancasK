@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun carregaComponentes() {
-       lista_transacoes_adiciona_despesa = findViewById(R.id.lista_transacoes_adiciona_despesa)
+        lista_transacoes_adiciona_despesa = findViewById(R.id.lista_transacoes_adiciona_despesa)
         lista_transacoes_adiciona_receita = findViewById(R.id.lista_transacoes_adiciona_receita)
         lista_transacoes_adiciona_menu = findViewById(R.id.lista_transacoes_adiciona_menu)
         lista_transacoes_listview = findViewById(R.id.lista_transacoes_listview)
