@@ -2,10 +2,11 @@ package com.example.project.model
 
 import android.content.Context
 import android.view.View
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.example.financask.R
 import com.example.project.extensions.formataMoedaBrasil
-import kotlinx.android.synthetic.main.resumo_card.view.*
+import org.w3c.dom.Text
 import java.math.BigDecimal
 
 class ResumoView(
@@ -32,15 +33,15 @@ class ResumoView(
     }
 
     private fun configuraViews() {
-        with(view.resumo_card_despesa) {
+        with(view.findViewById<TextView>(R.id.resumo_card_despesa)) {
             text = totalDespesa.formataMoedaBrasil()
             setTextColor(ContextCompat.getColor(contexto, configuraCorResumo(totalDespesa)))
         }
-        with(view.resumo_card_receita) {
+        with(view.findViewById<TextView>(R.id.resumo_card_receita)) {
             text = totalReceita.formataMoedaBrasil()
             setTextColor(ContextCompat.getColor(contexto, configuraCorResumo(totalReceita)))
         }
-        with(view.resumo_card_total) {
+        with(view.findViewById<TextView>(R.id.resumo_card_receita)) {
             text = totalLiquido.formataMoedaBrasil()
             setTextColor(ContextCompat.getColor(contexto, configuraCorResumo(totalLiquido)))
         }

@@ -7,10 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.EditText
+import android.widget.Spinner
 import com.example.financask.R
 import com.example.project.extensions.converteParaCalendar
 import com.example.project.extensions.formatarDataBr
-import kotlinx.android.synthetic.main.form_transacao.view.*
 import java.math.BigDecimal
 import java.util.*
 
@@ -20,9 +21,11 @@ abstract class FormularioTransacaoDialog(
     private val tipoTransacao: TipoEnum
 ) {
     private val viewCriada = criarLayout()
-    protected val recursoTransacaoValor = viewCriada.form_transacao_valor
-    protected val recursoTransacaoCategoria = viewCriada.form_transacao_categoria
-    protected val recursoTransacaoData = viewCriada.form_transacao_data
+    protected val recursoTransacaoValor =
+        viewCriada.findViewById<EditText>(R.id.form_transacao_valor)
+    protected val recursoTransacaoCategoria =
+        viewCriada.findViewById<Spinner>(R.id.form_transacao_categoria)
+    protected val recursoTransacaoData = viewCriada.findViewById<EditText>(R.id.form_transacao_data)
     abstract val tituloBotaoPositivo: String
 
     fun configuraDialog(delegate: (transacao: Transacoes) -> Unit) {
@@ -31,7 +34,7 @@ abstract class FormularioTransacaoDialog(
         criaDialog(delegate)
     }
 
-    private fun criaDialog(delegate:(transacao: Transacoes)-> Unit) {
+    private fun criaDialog(delegate: (transacao: Transacoes) -> Unit) {
         val titulo = devolveTipoTransacao()
 
         AlertDialog
